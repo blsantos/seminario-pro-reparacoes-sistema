@@ -1,0 +1,486 @@
+/*
+ * Seminário Pró-Reparações - Frontend Shortcodes CSS
+ * Estilos otimizados para exibição pública dos shortcodes
+ */
+
+/* Variáveis CSS - Tema Afro-Brasileiro */
+:root {
+    --seminario-laranja: #FF6B35;
+    --seminario-vermelho: #D72638;
+    --seminario-dourado: #F7C948;
+    --seminario-verde: #2A9D8F;
+    --seminario-roxo: #5B2C6F;
+    --seminario-dark: #2C3E50;
+    --seminario-gray: #7F8C8D;
+    --seminario-light: #ECF0F1;
+    --seminario-white: #FFFFFF;
+}
+
+/* Container Principal */
+.seminario-paineis-list,
+.seminario-conferencistas-list,
+.seminario-observadores-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.seminario-paineis-list h2,
+.seminario-conferencistas-list h2,
+.seminario-observadores-list h2 {
+    color: var(--seminario-vermelho);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.seminario-subtitle {
+    text-align: center;
+    color: var(--seminario-dark);
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* Seções por Data */
+.seminario-dia-section {
+    margin-bottom: 50px;
+}
+
+.seminario-data-header {
+    background: linear-gradient(135deg, var(--seminario-laranja), var(--seminario-vermelho));
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-transform: capitalize;
+}
+
+/* Grids Responsivos */
+.seminario-paineis-grid,
+.seminario-conferencistas-grid,
+.seminario-observadores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Cards dos Painéis */
+.seminario-painel-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--seminario-laranja);
+}
+
+.seminario-painel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.seminario-painel-imagem {
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--seminario-dourado), var(--seminario-laranja));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seminario-painel-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.seminario-painel-card:hover .seminario-painel-imagem img {
+    transform: scale(1.05);
+}
+
+.seminario-imagem-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+    color: white;
+    opacity: 0.8;
+}
+
+.seminario-painel-content {
+    padding: 25px;
+}
+
+.seminario-painel-content h4 {
+    color: var(--seminario-dark);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.seminario-painel-horario,
+.seminario-painel-local,
+.seminario-painel-palestrantes,
+.seminario-painel-mediador {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    color: var(--seminario-dark);
+    line-height: 1.5;
+}
+
+.seminario-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+    min-width: 20px;
+}
+
+.seminario-painel-descricao {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--seminario-light);
+    color: var(--seminario-gray);
+    line-height: 1.6;
+}
+
+/* Cards de Conferencistas e Observadores */
+.seminario-conferencista-item,
+.seminario-observador-item {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--seminario-verde);
+}
+
+.seminario-conferencista-item:hover,
+.seminario-observador-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.seminario-conferencista-foto,
+.seminario-observador-foto {
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--seminario-verde), var(--seminario-dourado));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seminario-conferencista-foto img,
+.seminario-observador-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.seminario-conferencista-item:hover .seminario-conferencista-foto img,
+.seminario-observador-item:hover .seminario-observador-foto img {
+    transform: scale(1.05);
+}
+
+.seminario-foto-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.seminario-conferencista-info,
+.seminario-observador-info {
+    padding: 25px;
+}
+
+.seminario-conferencista-info h3,
+.seminario-observador-info h3 {
+    color: var(--seminario-dark);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.seminario-cargo {
+    color: var(--seminario-vermelho);
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.seminario-instituicao {
+    color: var(--seminario-verde);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.seminario-pais {
+    color: var(--seminario-laranja);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.seminario-biografia {
+    padding-top: 15px;
+    border-top: 1px solid var(--seminario-light);
+    color: var(--seminario-gray);
+    line-height: 1.6;
+}
+
+/* Formulário de Inscrição */
+.seminario-inscricao-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--seminario-laranja);
+}
+
+/* Mensagens do formulário */
+.seminario-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+.seminario-message.success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border: 2px solid #b8dabd;
+}
+
+.seminario-message.error {
+    background: linear-gradient(135deg, #f8d7da, #f1b0b7);
+    color: #721c24;
+    border: 2px solid #f1b0b7;
+}
+
+/* Campos com erro */
+.seminario-form-group input.error,
+.seminario-form-group textarea.error {
+    border-color: var(--seminario-vermelho);
+    background-color: #fdf2f2;
+}
+
+/* Animações */
+.animate-in {
+    animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.seminario-inscricao-form h2 {
+    color: var(--seminario-vermelho);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.seminario-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.seminario-form-group {
+    margin-bottom: 20px;
+}
+
+.seminario-form-group label {
+    display: block;
+    color: var(--seminario-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.seminario-form-group input,
+.seminario-form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--seminario-light);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.seminario-form-group input:focus,
+.seminario-form-group textarea:focus {
+    outline: none;
+    border-color: var(--seminario-laranja);
+}
+
+.seminario-paineis-checkbox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.seminario-checkbox-label {
+    display: block;
+    padding: 15px;
+    border: 2px solid var(--seminario-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.seminario-checkbox-label:hover {
+    border-color: var(--seminario-laranja);
+    background: rgba(255, 107, 53, 0.05);
+}
+
+.seminario-form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.seminario-form-submit button {
+    background: linear-gradient(135deg, var(--seminario-laranja), var(--seminario-vermelho));
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seminario-form-submit button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* Seções de País e Status */
+.seminario-pais-section,
+.seminario-status-section {
+    margin-bottom: 40px;
+}
+
+.seminario-pais-header {
+    background: linear-gradient(135deg, var(--seminario-verde), var(--seminario-dourado));
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seminario-status-header {
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.seminario-status-header.confirmados {
+    background: linear-gradient(135deg, var(--seminario-verde), var(--seminario-dourado));
+}
+
+.seminario-status-header.pendentes {
+    background: linear-gradient(135deg, var(--seminario-gray), var(--seminario-dark));
+}
+
+/* Item pendente com estilo diferenciado */
+.seminario-observador-item.pendente {
+    opacity: 0.8;
+    border-left-color: var(--seminario-gray);
+}
+
+.seminario-observador-item.pendente .seminario-observador-foto {
+    background: linear-gradient(135deg, var(--seminario-gray), var(--seminario-dark));
+}
+
+/* Campos especiais */
+.seminario-especialidade {
+    color: var(--seminario-roxo);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .seminario-paineis-grid,
+    .seminario-conferencistas-grid,
+    .seminario-observadores-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .seminario-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .seminario-paineis-checkbox {
+        grid-template-columns: 1fr;
+    }
+    
+    .seminario-paineis-list h2,
+    .seminario-conferencistas-list h2,
+    .seminario-observadores-list h2 {
+        font-size: 2em;
+    }
+    
+    .seminario-data-header,
+    .seminario-pais-header,
+    .seminario-status-header {
+        font-size: 1.3em;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .seminario-paineis-list,
+    .seminario-conferencistas-list,
+    .seminario-observadores-list,
+    .seminario-inscricao-form {
+        padding: 15px;
+    }
+    
+    .seminario-painel-content,
+    .seminario-conferencista-info,
+    .seminario-observador-info {
+        padding: 20px;
+    }
+}
