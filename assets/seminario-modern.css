@@ -1,0 +1,681 @@
+/*
+ * Seminário Pró-Reparações - Modern Afro-Brazilian Interface
+ * Design System with Tailwind-inspired utilities and vibrant afro-themed colors
+ */
+
+/* Color Variables - Afro-Brazilian Theme */
+:root {
+    --seminario-laranja: #FF6B35;
+    --seminario-vermelho: #D72638;
+    --seminario-dourado: #F7C948;
+    --seminario-verde: #2A9D8F;
+    --seminario-roxo: #5B2C6F;
+    
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, var(--seminario-laranja), var(--seminario-vermelho));
+    --gradient-royal: linear-gradient(135deg, var(--seminario-dourado), var(--seminario-roxo));
+    --gradient-earth: linear-gradient(135deg, var(--seminario-verde), var(--seminario-dourado));
+    
+    /* Extended palette */
+    --seminario-laranja-light: #FF8A5B;
+    --seminario-vermelho-light: #E74C3C;
+    --seminario-dourado-light: #F8DC6F;
+    --seminario-verde-light: #48BFB1;
+    --seminario-roxo-light: #7B4397;
+    
+    /* Neutral colors */
+    --seminario-dark: #2C3E50;
+    --seminario-gray: #7F8C8D;
+    --seminario-light: #ECF0F1;
+    --seminario-white: #FFFFFF;
+}
+
+/* Scoped to avoid WordPress conflicts */
+.seminario-admin {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Modern Cards */
+.seminario-card {
+    background: var(--seminario-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+    border-left: 4px solid var(--seminario-laranja);
+    transition: all 0.3s ease;
+}
+
+.seminario-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.seminario-card.card-stats {
+    background: var(--gradient-warm);
+    color: var(--seminario-white);
+    border-left: none;
+}
+
+.seminario-card.card-royal {
+    background: var(--gradient-royal);
+    color: var(--seminario-white);
+    border-left: none;
+}
+
+.seminario-card.card-earth {
+    background: var(--gradient-earth);
+    color: var(--seminario-white);
+    border-left: none;
+}
+
+/* Modern Headers */
+.seminario-header {
+    background: var(--gradient-warm);
+    color: var(--seminario-white);
+    padding: 32px 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.seminario-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v-2c9.943 0 18-8.057 18-18h2zm0 0c0-11.046 8.954-20 20-20v2c-9.943 0-18 8.057-18 18h-2z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+    z-index: 0;
+}
+
+.seminario-header h1,
+.seminario-header h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Modern Buttons */
+.seminario-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.seminario-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.seminario-btn:hover:before {
+    left: 100%;
+}
+
+.seminario-btn-primary {
+    background: var(--gradient-warm);
+    color: var(--seminario-white);
+}
+
+.seminario-btn-secondary {
+    background: var(--gradient-royal);
+    color: var(--seminario-white);
+}
+
+.seminario-btn-success {
+    background: var(--seminario-verde);
+    color: var(--seminario-white);
+}
+
+.seminario-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Modern Grid */
+.seminario-grid {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.seminario-grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.seminario-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.seminario-grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Modern Table */
+.seminario-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--seminario-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.seminario-table thead {
+    background: var(--gradient-warm);
+    color: var(--seminario-white);
+}
+
+.seminario-table th,
+.seminario-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.seminario-table tbody tr:hover {
+    background: rgba(255, 107, 53, 0.1);
+}
+
+/* Modern Form Elements */
+.seminario-form-group {
+    margin-bottom: 24px;
+}
+
+.seminario-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--seminario-dark);
+}
+
+.seminario-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.seminario-input:focus {
+    outline: none;
+    border-color: var(--seminario-laranja);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.seminario-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 16px;
+    background: var(--seminario-white);
+    transition: all 0.3s ease;
+}
+
+/* Statistics Cards */
+.seminario-stat {
+    text-align: center;
+    padding: 24px;
+    border-radius: 12px;
+    color: var(--seminario-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.seminario-stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seminario-stat-label {
+    font-size: 16px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.seminario-stat-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    opacity: 0.3;
+}
+
+/* Profile Cards */
+.seminario-profile {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--seminario-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--seminario-laranja);
+}
+
+.seminario-profile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.seminario-profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--seminario-dourado);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.seminario-profile-info h3 {
+    margin: 0 0 8px 0;
+    color: var(--seminario-dark);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.seminario-profile-cargo {
+    color: var(--seminario-laranja);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.seminario-profile-instituicao {
+    color: var(--seminario-gray);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.seminario-profile-pais {
+    display: inline-block;
+    background: var(--gradient-warm);
+    color: var(--seminario-white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Modern Alerts */
+.seminario-alert {
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    border-left: 4px solid;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.seminario-alert-success {
+    background: rgba(42, 157, 143, 0.1);
+    border-color: var(--seminario-verde);
+    color: var(--seminario-verde);
+}
+
+.seminario-alert-warning {
+    background: rgba(247, 201, 72, 0.1);
+    border-color: var(--seminario-dourado);
+    color: #B7860B;
+}
+
+.seminario-alert-error {
+    background: rgba(215, 38, 56, 0.1);
+    border-color: var(--seminario-vermelho);
+    color: var(--seminario-vermelho);
+}
+
+/* Navigation Tabs */
+.seminario-tabs {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 24px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.seminario-tab {
+    flex: 1;
+    padding: 12px 16px;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--seminario-gray);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.seminario-tab.active,
+.seminario-tab:hover {
+    background: var(--gradient-warm);
+    color: var(--seminario-white);
+    transform: translateY(-1px);
+}
+
+/* Loading Animation */
+.seminario-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--seminario-white);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .seminario-grid-2,
+    .seminario-grid-3,
+    .seminario-grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .seminario-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .seminario-tabs {
+        flex-direction: column;
+    }
+    
+    .seminario-header {
+        padding: 24px 16px;
+    }
+    
+    .seminario-stat-number {
+        font-size: 36px;
+    }
+}
+
+/* WordPress Admin Integration */
+.wp-admin .seminario-admin .seminario-card {
+    background: #fff;
+}
+
+.wp-admin .seminario-admin .seminario-header {
+    margin-top: 0;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .seminario-admin {
+        --seminario-white: #1e1e1e;
+        --seminario-light: #2d2d2d;
+        --seminario-dark: #ffffff;
+        --seminario-gray: #b0b0b0;
+    }
+}
+
+/* Print styles */
+@media print {
+    .seminario-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .seminario-btn {
+        display: none;
+    }
+}
+/* Formulários */
+.seminario-form-group {
+    margin-bottom: 16px;
+}
+
+.seminario-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--seminario-dark);
+}
+
+.seminario-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.seminario-input:focus {
+    outline: none;
+    border-color: var(--seminario-laranja);
+}
+
+.seminario-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.seminario-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e1e5e9;
+}
+
+.seminario-checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 12px;
+}
+
+.seminario-checkbox-item {
+    display: block;
+    padding: 12px;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.seminario-checkbox-item:hover {
+    border-color: var(--seminario-laranja);
+    background-color: #fdf4f0;
+}
+
+.seminario-checkbox-item input {
+    margin-right: 8px;
+}
+
+/* Tabelas */
+.seminario-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.seminario-table th,
+.seminario-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.seminario-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--seminario-dark);
+}
+
+.seminario-empty-state {
+    text-align: center;
+    color: var(--seminario-gray);
+    font-style: italic;
+    padding: 40px 20px;
+}
+
+/* Status badges */
+.status-ativo {
+    background-color: var(--seminario-verde);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-inativo {
+    background-color: var(--seminario-gray);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-manutencao {
+    background-color: var(--seminario-dourado);
+    color: var(--seminario-dark);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Melhorar contrastes */
+.seminario-admin .seminario-header {
+    background: var(--gradient-warm);
+    color: var(--seminario-white);
+}
+
+.seminario-admin .seminario-header h1,
+.seminario-admin .seminario-header h2 {
+    color: var(--seminario-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.seminario-card h2,
+.seminario-card h3 {
+    color: var(--seminario-dark);
+    margin-bottom: 12px;
+}
+
+.seminario-form-group label {
+    color: var(--seminario-dark);
+    font-weight: 600;
+}
+
+/* Botões com melhor contraste */
+.seminario-btn-primary {
+    background: var(--seminario-laranja);
+    color: white;
+}
+
+.seminario-btn-primary:hover {
+    background: var(--seminario-laranja-light);
+}
+
+.seminario-btn-success {
+    background: var(--seminario-verde);
+    color: white;
+}
+
+.seminario-btn-success:hover {
+    background: var(--seminario-verde-light);
+}
+
+.seminario-btn-danger {
+    background: var(--seminario-vermelho);
+    color: white;
+}
+
+.seminario-btn-danger:hover {
+    background: var(--seminario-vermelho-light);
+}
+
+.seminario-btn-secondary {
+    background: var(--seminario-gray);
+    color: white;
+}
+
+.seminario-btn-secondary:hover {
+    background: #95a5a6;
+}
+
+/* Image upload components */
+.seminario-image-upload-wrapper {
+    width: 100%;
+}
+
+.seminario-image-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.seminario-image-buttons .seminario-input {
+    flex: 1;
+    max-width: 200px;
+}
+
+.seminario-image-preview {
+    margin-top: 10px;
+}
+
+.seminario-image-preview img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seminario-upload-image-btn,
+.seminario-remove-image-btn {
+    white-space: nowrap;
+    min-width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .seminario-image-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .seminario-image-buttons .seminario-input {
+        max-width: none;
+    }
+}
+
